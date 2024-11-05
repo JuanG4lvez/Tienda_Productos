@@ -1,13 +1,14 @@
-export type Guitar = {
+export type Product = {
     id: number
     name: string
     image: string
     description: string
     price: number
+    category: string
 }
 
-export type CartItem = Guitar & {
+export type CartItem = Product & {
     quantity: number
 }
 
-export type GuitarID = Guitar['id']
+export type GuitarID = Product['id']

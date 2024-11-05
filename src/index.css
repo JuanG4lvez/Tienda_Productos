@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .fw-black {
   font-weight: 900;
 }
@@ -7,13 +8,12 @@
   text-transform: uppercase;
 }
 
-.carrito {
+.carrito{
   background-color: transparent;
   border: none;
   max-width: 2rem;
   position: relative;
   z-index: 100;
-  
 }
 
 .carrito #carrito {
@@ -22,7 +22,7 @@
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
-.carrito:hover #carrito {
+.carrito:hover #carrito{
   display: block;
   background-color: white;
   padding: 10px;
@@ -30,13 +30,13 @@
   min-width: 350px;
   width: fit-content;
   top: 100%;
-  right: 0;
-  left: unset;
+  right: unset;
+  left: 0;
   margin-left: unset;
   margin-right: unset;
 }
 
-#carrito img {
+#carrito img, .filtros img {
   width: 30px;
 }
 
@@ -53,6 +53,74 @@
 .m-0 {
   margin: 0;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+}
+
+.filtros{
+  background-color: transparent;
+  border: none;
+  max-width: 2rem;
+  position: relative;
+  z-index: 100;
+  width: 50%;
+}
+
+.filtros #filtro{
+  display: none;
+  position: absolute;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.filtros input[type=number]
+{
+  border-radius: 10px;
+  border: 1px solid #c6c5c5;
+  padding: 5px 5px;
+  width: 100%;
+  margin-left: 5px;
+}
+
+.filtros:hover #filtro{
+  display: block;
+  background-color: white;
+  padding: 10px;
+  height: fit-content;
+  min-width: 350px;
+  width: fit-content;
+  top: 100%;
+  right: unset;
+  left: 0;
+  margin-left: unset;
+  margin-right: unset;
+}
+
+.filtros-range #range{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px;
+}
+
+.filtros legend{
+  padding: 2px 2px;
+  border-top: 1px solid #c6c5c5;
+  font-weight: bold;
+}
+
+.filtros-checkbox{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+}
+
+.item{
+  position: relative;
+  bottom: 0;
+}
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -280,14 +348,6 @@ button:not(:disabled),
   height: auto;
 }
 
-/* rtl:raw:
-[type="tel"],
-[type="url"],
-[type="email"],
-[type="number"] {
-  direction: ltr;
-}
-*/
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -326,6 +386,7 @@ button:not(:disabled),
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+  
 }
 @media (min-width: 1200px) {
   .container-xl {
@@ -529,34 +590,11 @@ button:not(:disabled),
   }
 }
 
-/* rtl:begin:ignore */
 
-/* rtl:end:ignore */
-
-/* rtl:begin:ignore */
-
-/* rtl:end:ignore */
-
-/* rtl:begin:ignore */
-
-/* rtl:end:ignore */
-
-/* rtl:begin:ignore */
-
-/* rtl:end:ignore */
-
-/* rtl:options: {
-  "autoRename": true,
-  "stringMap":[ {
-    "name"    : "prev-next",
-    "search"  : "prev",
-    "replace" : "next"
-  } ]
-} */
 
 @keyframes spinner-border {
   to {
-    transform: rotate(360deg) /* rtl:ignore */;
+    transform: rotate(360deg) /* rtl:ignore ;*/
   }
 }
 
@@ -686,9 +724,6 @@ button:not(:disabled),
   text-transform: uppercase !important;
 }
 
-/* rtl:begin:remove */
-
-/* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
@@ -754,9 +789,7 @@ button:not(:disabled),
   }
 }
 .header {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/header.jpg");
-  /** TODO: Eliminar la sig linea **/
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img/header.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
   background-position: 50%;
   background-size: cover;
   position: relative;

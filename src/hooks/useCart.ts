@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { db } from '../data/db.ts'
-import type { CartItem, Guitar, GuitarID } from '../types/types.ts'
+import type { CartItem, Product, GuitarID } from '../types/types.ts'
 
 export const useCart = () => {
     const initialCart = () : CartItem[] => {
@@ -14,7 +14,7 @@ export const useCart = () => {
       //almacenar en el localStorage para persistencia
     useEffect(() => localStorage.setItem('cart', JSON.stringify(cart)), [cart])
     
-    function addToCart(item : Guitar){
+    function addToCart(item : Product){
         const itemExist = cart.findIndex(guitar => guitar.id === item.id);
         if(itemExist >= 0)
         {

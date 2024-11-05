@@ -1,13 +1,13 @@
-import type { Guitar } from "../types/types";
+import type { Product } from "../types/types";
 
-type GuitarProps = {
-    guitar : Guitar
-    addToCart : (item: Guitar) => void
+type ProductProps = {
+    product : Product,
+    addToCart : (item: Product) => void
 }
 
-export default function Guitar({guitar, addToCart} : GuitarProps){
+export default function Guitar({product, addToCart} : ProductProps){
 
-    const { name, description, price, image } = guitar;
+    const { name, description, price, image, category } = product;
 
     return(
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">
@@ -15,11 +15,11 @@ export default function Guitar({guitar, addToCart} : GuitarProps){
             <img className="img-fluid" src={`/img/${image}.jpg`} alt="imagen guitarra" />
         </div>
         <div className="col-8">
-            <h3 className="text-black fs-4 fw-bold text-uppercase">{name}</h3>
+            <h3 className="text-black fs-4 fw-bold text-uppercase">{name}({category})</h3>
             <p>{description}</p>
             <p className="fw-black text-primary fs-3">${price}</p>
             <button 
-                onClick={() => addToCart(guitar)}
+                onClick={() => addToCart(product)}
                 type="button"
                 className="btn btn-dark w-100"
             >Agregar al Carrito</button>
