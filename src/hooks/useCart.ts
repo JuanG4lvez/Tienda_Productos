@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { db } from '../data/db.ts'
-import type { CartItem, Product, GuitarID } from '../types/types.ts'
+import type { CartItem, Product, ProductID } from '../types/types.ts'
 
 export const useCart = () => {
     const initialCart = () : CartItem[] => {
@@ -8,14 +7,30 @@ export const useCart = () => {
         return localStorageCart ? JSON.parse(localStorageCart) : []
       }
     
-    const [data] = useState(db)
+    //const [data] = useState(db)
+    const [data, setData] = useState <Product[]>([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true)
+    useEffect(() => {
+      fetch("https://tienda-opal.vercel.app/products")
+        .then((response) => response.json())
+        .then((data) => {
+          setData(data)
+          setLoading(false)
+        })
+        .catch((error) =>{
+          setError(error)
+          setLoading(false)
+        })
+    }, [])
+
     const [cart, setCart] = useState(initialCart)
     
       //almacenar en el localStorage para persistencia
     useEffect(() => localStorage.setItem('cart', JSON.stringify(cart)), [cart])
     
     function addToCart(item : Product){
-        const itemExist = cart.findIndex(guitar => guitar.id === item.id);
+        const itemExist = cart.findIndex(product => product.id === item.id);
         if(itemExist >= 0)
         {
           const updatedCart = [...cart]
@@ -29,11 +44,11 @@ export const useCart = () => {
         }
     }
     
-    function removeFromCart(id : GuitarID){
-        setCart(prevCart => prevCart.filter(guitar => guitar.id !== id))
+    function removeFromCart(id : ProductID){
+        setCart(prevCart => prevCart.filter(product => product.id !== id))
     }
     
-    function increaseQuantity(id : GuitarID){
+    function increaseQuantity(id : ProductID){
         const updatedCart = cart.map(item => {
           if(item.id === id && item.quantity < 10){
             return {
@@ -46,7 +61,7 @@ export const useCart = () => {
         setCart(updatedCart)
     }
     
-    function decreaseQuantity(id : GuitarID){
+    function decreaseQuantity(id : ProductID){
         const updatedCart = cart.map(item => {
           if(item.id === id && item.quantity > 1){
             return {

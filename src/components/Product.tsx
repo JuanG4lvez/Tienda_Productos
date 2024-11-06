@@ -5,14 +5,14 @@ type ProductProps = {
     addToCart : (item: Product) => void
 }
 
-export default function Guitar({product, addToCart} : ProductProps){
+export default function Product({product, addToCart} : ProductProps){
 
     const { name, description, price, image, category } = product;
 
     return(
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">
         <div className="col-4">
-            <img className="img-fluid" src={`/img/${image}.jpg`} alt="imagen guitarra" />
+            <img className="img-fluid" src={`${image}`} alt="img product" />
         </div>
         <div className="col-8">
             <h3 className="text-black fs-4 fw-bold text-uppercase">{name}({category})</h3>

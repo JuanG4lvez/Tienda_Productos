@@ -1,12 +1,18 @@
 
 
 type filterProps = {
+    filter: {
+        minRange: number,
+        maxRange: number,
+        category: string[]
+    }
     priceHandle: (event: React.ChangeEvent<HTMLInputElement>) => void,
     categoryHandle: (event: React.ChangeEvent<HTMLInputElement>) => void,
-    handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void
+    handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+    categories: string[]
 }
 
-export default function Filter({ priceHandle, categoryHandle, handleSubmit} : filterProps) {
+export default function Filter({ filter, priceHandle, categoryHandle, handleSubmit, categories} : filterProps) {
     
     const filters = [
         {filter: 'price', description: 'Filtrar por precio'}, 
@@ -14,9 +20,9 @@ export default function Filter({ priceHandle, categoryHandle, handleSubmit} : fi
     ]
     
     return(
-        <div className="filtros">
-            <div className="d-flex align-items-center justify-content-end">
-                <img className="img-fluid" src="/img/filtro.png" alt="imagen filtro"/>
+        <nav className="mt-5 d-flex align-items-end">
+            <div className="filtros">
+                <img className="" src="/images/filtro.png" alt="imagen filtro"/>
                 <form onSubmit={handleSubmit}>
                     <div id="filtro">
                     {filters.map((option) => (
@@ -27,11 +33,11 @@ export default function Filter({ priceHandle, categoryHandle, handleSubmit} : fi
                                 <div className="filtros-range">
                                     <div id="range">
                                         <label className="text-center">Min</label>
-                                        <input type="number" name="minRange" min="0" max="400000" step="10000" onChange={priceHandle}></input>
+                                        <input type="number" name="minRange" min="0" max="400" step="50" onChange={priceHandle}></input>
                                     </div>
                                     <div id="range">
                                         <label className="text-center">Max</label>
-                                        <input type="number" name="maxRange" min="0" max="400000" step="10000" onChange={priceHandle}></input>
+                                        <input type="number" name="maxRange" min="0" max="400" step="50" onChange={priceHandle}></input>
                                     </div>
                                 </div>
                             </>
@@ -39,18 +45,12 @@ export default function Filter({ priceHandle, categoryHandle, handleSubmit} : fi
                             <>
                                 <legend className="text-center">Filtrar por categoría</legend>
                                 <div className="filtros-checkbox">
+                                    {categories.map(category => (
                                     <div>
-                                        <input type="checkbox" name="category" value="A" onChange={categoryHandle}></input>
-                                        <label>Tipo A</label>
+                                        <input type="checkbox" name="category" value={category} onChange={categoryHandle}></input>
+                                        <label>{category}</label>
                                     </div>
-                                    <div>
-                                        <input type="checkbox" name="category_2" value="B" onChange={categoryHandle}></input>
-                                        <label>Tipo B</label>
-                                    </div>
-                                    <div>
-                                        <input type="checkbox" name="category_3" value="C" onChange={categoryHandle}></input>
-                                        <label>Tipo C</label>
-                                    </div>
+                                    ))}
                                 </div>
                             </>
                             )}
@@ -60,6 +60,6 @@ export default function Filter({ priceHandle, categoryHandle, handleSubmit} : fi
                 </div>
             </form>
         </div>
-        </div>
+    </nav>
     )
 }

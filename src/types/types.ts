@@ -11,4 +11,4 @@ export type CartItem = Product & {
     quantity: number
 }
 
-export type GuitarID = Product['id']
+export type ProductID = Product['id']
