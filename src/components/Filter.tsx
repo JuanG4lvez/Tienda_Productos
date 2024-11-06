@@ -1,5 +1,3 @@
-
-
 type filterProps = {
     filter: {
         minRange: number,
@@ -12,7 +10,7 @@ type filterProps = {
     categories: string[]
 }
 
-export default function Filter({ filter, priceHandle, categoryHandle, handleSubmit, categories} : filterProps) {
+export default function Filter({ priceHandle, categoryHandle, handleSubmit, categories} : filterProps) {
     
     const filters = [
         {filter: 'price', description: 'Filtrar por precio'}, 

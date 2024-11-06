@@ -53,7 +53,7 @@ const Home = () => {
 						/>
 					): (
 						<>
-						<p className='text-center'>No hay productos que cumplan con los filtros</p>
+						
 						</>
 					)}
         		</>
