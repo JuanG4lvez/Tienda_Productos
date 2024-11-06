@@ -7,7 +7,7 @@ type ProductProps = {
 
 export default function Product({product, addToCart} : ProductProps){
 
-    const { name, description, price, image, category } = product;
+    const { name, description, price, image} = product;
 
     return(
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">
