@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css"; // Asegúrate de agregar los estilos adecuados
+import "./Login.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useNavigate } from "react-router-dom";
 
