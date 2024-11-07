@@ -7,7 +7,7 @@ type ProductProps = {
 
 export default function Product({product, addToCart} : ProductProps){
 
-    const { name, description, price, image} = product;
+    const { name, description, price, image, category} = product;
 
     return(
     <div className="col-md-6 col-lg-4 my-4 row align-items-center">
@@ -16,6 +16,7 @@ export default function Product({product, addToCart} : ProductProps){
         </div>
         <div className="col-8">
             <h3 className="text-black fs-4 fw-bold text-uppercase">{name}</h3>
+            <p>{category}</p>
             <p>{description}</p>
             <p className="fw-black text-primary fs-3">${price}</p>
             <button 
