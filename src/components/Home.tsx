@@ -3,7 +3,6 @@ import Product from './Product.tsx'
 import Filter from './Filter.tsx'
 import { useCart } from '../hooks/useCart'
 import { useFilter } from '../hooks/useFilter.ts'
-import { Link } from 'react-router-dom'
 
 const Home = () => {
     const {data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart,
