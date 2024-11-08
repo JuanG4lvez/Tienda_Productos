@@ -44,7 +44,7 @@ const Login: React.FC = () => {
       const result = await response.json();
       console.log("login exitoso:", result);
       setLoading(false);
-      navigate("/home");
+      navigate("/userprofile");
     } catch (error) {
       setError("Error al iniciar sesión");
       setLoading(false);
