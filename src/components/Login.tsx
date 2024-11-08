@@ -20,10 +20,7 @@ const Login: React.FC = () => {
       return;
     }
 
-    const data = {
-      email,
-      password,
-    };
+    const data = { email, password };
 
     try {
       const response = await fetch(
@@ -53,13 +50,11 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="login login-container">
       <div className="container">
         <div className="form-container sign-in-container">
           <form onSubmit={handleSubmit}>
             <h1 className="title">Iniciar Sesión</h1>
-
-            {/* iconos de redes sociales */}
             <div className="social-container">
               <a href="#" className="social">
                 <i className="fab fa-facebook-f"></i>
@@ -71,11 +66,7 @@ const Login: React.FC = () => {
                 <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
-            {/* fin iconos de redes sociales */}
-
             <span>o ingresa con tu cuenta</span>
-
-            {/* input de email y contraseña */}
             <div className="input-container">
               <input
                 className="input-email"
@@ -92,12 +83,8 @@ const Login: React.FC = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            {/* fin input de email y contraseña */}
-
             <a href="#">Olvidaste tu contraseña?</a>
-
             {error && <div className="error-message">{error}</div>}
-
             <button type="submit" className="sign-in-btn">
               Ingresar
             </button>
