@@ -4,17 +4,23 @@ import './App.css'
 import Home from './components/Home'
 import Checkout from './components/Checkout'
 import Footer from './components/Footer'
+import Error from './components/Error'
 
 function App() {
  	return (
 		<>
-			<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/checkout' element={<Checkout />} />
-			</Routes>
-			</BrowserRouter>
-			<Footer />
+			<div className='App'>
+				<main>
+					<BrowserRouter>
+						<Routes>
+							<Route path='/' element={<Home />} />
+							<Route path='/checkout' element={<Checkout />} />
+							<Route path='*' element={<Error />}/>
+						</Routes>
+					</BrowserRouter>
+				</main>
+				<Footer />
+			</div>
 		</>
 	)		
 }

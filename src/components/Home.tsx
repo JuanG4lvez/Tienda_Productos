@@ -14,8 +14,20 @@ const Home = () => {
     
   return (
     <>
-        <header className="py-5 header">
-                <div className="container-xl">
+		<nav className='nav-header bg-dark'>
+			<Header 
+  				cart={cart}
+  				removeFromCart={removeFromCart}
+  				increaseQuantity={increaseQuantity}
+  				decreaseQuantity={decreaseQuantity}
+  				clearCart={clearCart}
+  				isEmpty={isEmpty}
+  				cartTotal={cartTotal}
+  			/>
+			<button className='button-sesion btn btn-sucess'>Inicio Sesion</button>
+		</nav>
+        <header>
+            <div className="container-xl">
 				<h2 className='text-center'>Tienda de Productos Electrónicos</h2>
                     <div className='options-container d-flex'>
 						<Filter 
@@ -25,23 +37,10 @@ const Home = () => {
 							handleSubmit={handleSubmit}
 							categories={categories}
 						/>
-						
-						<Header 
-  							cart={cart}
-  							removeFromCart={removeFromCart}
-  							increaseQuantity={increaseQuantity}
-  							decreaseQuantity={decreaseQuantity}
-  							clearCart={clearCart}
-  							isEmpty={isEmpty}
-  							cartTotal={cartTotal}
-  						/>
 					</div>
                 </div>
         </header>
-		<main className="container-xl mt-5">
-		<div className="container-inicio-sesion d-flex">
-			<button className="btn-inicio-sesion btn btn-sucess my-3">Inicio de sesion</button>
-		</div>
+		<section className="container-xl mt-5">
   			<h2 className="text-center">Nuestra Colección</h2>
 		
   		<div className="product row mt-5">
@@ -75,7 +74,7 @@ const Home = () => {
 			</>
 		)}
 			</div>
-		</main>
+		</section>
 
 		
 	</>

@@ -1,5 +1,40 @@
 @charset "UTF-8";
 
+html{
+  height: 100%;
+  margin: 0;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main{
+  flex: 1;
+}
+
+.nav-header{
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  justify-content: flex-end;
+  z-index: 200
+}
+
+.nav-header button{
+  position: relative;
+  margin: 5px 20px 5px 20px;
+  
+}
+
+.nav-header *{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .fw-black {
   font-weight: 900;
 }
@@ -72,6 +107,12 @@ input[type=number]::-webkit-outer-spin-button{
   width: 30px;
 }
 
+@media (max-width: 1200px){
+  #carrito img{
+    width: 60px
+  }
+}
+
 .filtros #filtro{
   display: none;
   position: absolute;
@@ -120,10 +161,6 @@ input[type=number]::-webkit-outer-spin-button{
   padding: 10px 10px;
 }
 
-.options-container{
-  justify-content: space-between;
-}
-
 .checkout{
   position: relative;
   margin-left: 10%;
@@ -131,7 +168,24 @@ input[type=number]::-webkit-outer-spin-button{
   border-radius: 10px;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   padding: 1.5rem 1.5rem;
-  
+}
+
+footer{
+  position: relative;
+}
+
+@media (max-width: 586px){
+  .table-container{
+    overflow-x: scroll;
+  }
+
+  .checkout{
+    margin: auto
+  }
+
+  .checkout-button button{
+    font-size: small;
+  }
 }
 
 .checkout table{
@@ -162,6 +216,23 @@ input[type=number]::-webkit-outer-spin-button{
   .container-inicio-sesion{
     justify-content: center;
   }
+}
+
+.address-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.address-content input{
+  padding: 5px 5px;
+  border-radius: 5px;
+  justify-self: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.address-content label{
+  margin-left: 5%;
 }
 
 
@@ -753,6 +824,11 @@ button:not(:disabled),
   padding-bottom: 3rem !important;
 }
 
+.py-7{
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
 .pt-5 {
   padding-top: 3rem !important;
 }
@@ -857,17 +933,19 @@ button:not(:disabled),
     transform: translateX(0);
   }
 }
-.header {
+header {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/header.jpg');
   background-position: 50%;
   background-size: cover;
   position: relative;
+  padding-top: 5.5rem;
 }
-.header .header-guitarra {
+.header {
   display: none;
 }
+
 @media (min-width: 992px) {
-  .header .header-guitarra {
+  header .header {
     display: block;
     position: absolute;
     right: 0;

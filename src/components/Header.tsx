@@ -19,7 +19,7 @@ export default function Header({cart, removeFromCart, increaseQuantity, decrease
         navigate('/checkout');
     }
     return(     
-        <nav className="mt-5 d-flex align-items-end">
+        <nav className="d-flex align-items-center">
             <div className="carrito">
                 <img className="img-fluid" src="/images/carrito.png" alt="imagen carrito" />
                 <div id="carrito" className="bg-white p-3">
@@ -57,7 +57,7 @@ export default function Header({cart, removeFromCart, increaseQuantity, decrease
                             </tbody>
                                 </table>    
                         <p className="text-end">Total pagar: <span className="fw-bold">${cartTotal}</span></p>
-                        <button className="btn btn-dark w-100 my-4 p-2" onClick={handleNavigate}>Pagar Carrito</button>
+                        <button className="btn btn-dark w-100  p-2" onClick={handleNavigate}>Pagar Carrito</button>
                     </>
                     )}
                     <button className="btn btn-dark w-100 my-4 p-2" onClick={clearCart}>Vaciar Carrito</button>

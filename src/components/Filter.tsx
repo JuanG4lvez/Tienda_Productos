@@ -18,7 +18,7 @@ export default function Filter({ priceHandle, categoryHandle, handleSubmit, cate
     ]
     
     return(
-        <nav className="mt-5 d-flex align-items-end">
+        <nav className="my-4 d-flex align-items-end">
             <div className="filtros">
                 <img className="" src="/images/filtro.png" alt="imagen filtro"/>
                 <form onSubmit={handleSubmit}>
