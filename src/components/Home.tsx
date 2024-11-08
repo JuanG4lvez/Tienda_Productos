@@ -18,7 +18,6 @@ const Home = () => {
 			<button className='button-sesion btn btn-sucess'>Inicio Sesion</button>
             <button className='button-sesion btn btn-sucess'>Herramientas Admin</button>
             
-            {location.pathname !== "/checkout" &&
 			<Header 
   				cart={cart}
   				removeFromCart={removeFromCart}
@@ -28,7 +27,7 @@ const Home = () => {
   				isEmpty={isEmpty}
   				cartTotal={cartTotal}
   			/>
-            }
+            
 		</nav>
         <header>
             <div className="container-xl">
