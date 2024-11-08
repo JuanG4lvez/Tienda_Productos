@@ -4,17 +4,21 @@ import Filter from './Filter.tsx'
 import { useCart } from '../hooks/useCart'
 import { useFilter } from '../hooks/useFilter.ts'
 
+
 const Home = () => {
-    const {data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart,
+    const { data, cart, addToCart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart,
     	isEmpty, cartTotal
   	} = useCart();
-
 	const {filter, filterProducts, priceHandle, categoryHandle, handleSubmit, isFilter} = useFilter();
     const categories = [...new Set(data.map(product => product.category))]
     
   return (
     <>
 		<nav className='nav-header bg-dark'>
+			<button className='button-sesion btn btn-sucess'>Inicio Sesion</button>
+            <button className='button-sesion btn btn-sucess'>Herramientas Admin</button>
+            
+            {location.pathname !== "/checkout" &&
 			<Header 
   				cart={cart}
   				removeFromCart={removeFromCart}
@@ -24,7 +28,7 @@ const Home = () => {
   				isEmpty={isEmpty}
   				cartTotal={cartTotal}
   			/>
-			<button className='button-sesion btn btn-sucess'>Inicio Sesion</button>
+            }
 		</nav>
         <header>
             <div className="container-xl">

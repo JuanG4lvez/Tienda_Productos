@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../hooks/useCart';
 import { useState } from 'react';
+import Navbar from './Navbar';
 
 const Checkout = () => {
     const {cart, cartTotal} = useCart();
@@ -58,10 +59,8 @@ const Checkout = () => {
 
     return (
         <>
-            <header className="py-5 header">
-                <h2 className='text-center'>Tienda de Productos Electrónicos</h2>
-            </header>
-            <div className='checkout my-4'>
+            <Navbar />
+            <div className='checkout'>
                 <div className='table-container'>
                 <table className='table'>
                     <thead>

@@ -26,7 +26,7 @@ main{
 
 .nav-header button{
   position: relative;
-  margin: 5px 20px 5px 20px;
+  margin: 5px 10px 5px;
   
 }
 
@@ -165,6 +165,8 @@ input[type=number]::-webkit-outer-spin-button{
   position: relative;
   margin-left: 10%;
   margin-right: 10%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
   border-radius: 10px;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
   padding: 1.5rem 1.5rem;
@@ -172,6 +174,14 @@ input[type=number]::-webkit-outer-spin-button{
 
 footer{
   position: relative;
+}
+
+.text-error{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 586px){
