@@ -1,23 +1,23 @@
-import "./DatosPerfil.css";
+import "../css/DatosPerfil.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
   faEnvelope,
-  faPhone,
-  faMapMarkerAlt,
+  //faPhone,
+  //faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
 const user = () => {
   let item = sessionStorage.getItem('user');
   return item ? JSON.parse(item) : null;
 }
-
 const userInfo = user();
+console.log(userInfo)
 
 const DatosPerfil = () => {
   const datos = {
-    nombre: userInfo? userInfo.userName : '',
-    correo: userInfo? userInfo.email : '',
+    nombre: userInfo? userInfo.userName : 'Cargando..',
+    correo: userInfo? userInfo.email : 'Cargando..',
     /*telefono: "123456789",
     direccion: "Av. Siempre Viva 123, Santiago, Chile",*/
   };

@@ -1,7 +1,7 @@
 import DatosPerfil from "./DatosPerfil";
 import HistorialPedidos from "./HistorialPedidos";
 import { useState } from "react";
-import "./Perfil.css";
+import "../css/Perfil.css";
 
 const Perfil = () => {
   const [activeComponent, setActiveComponent] = useState("DatosPerfil");

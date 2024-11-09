@@ -1,0 +1,59 @@
+  .filtros #filtro{
+    display: none;
+    position: absolute;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+  }
+  .filtros{
+    background-color: transparent;
+    border: none;
+    max-width: 2rem;
+    position: relative;
+    z-index: 100;
+    width: 50%;
+  }
+  
+  .filtros img{
+    width: 30px;
+  }
+  
+  .filtros input[type=number]
+  {
+    border-radius: 10px;
+    border: 1px solid #c6c5c5;
+    padding: 5px 5px;
+    width: 100%;
+    margin-left: 5px;
+  }
+  
+  .filtros:hover #filtro{
+    display: block;
+    background-color: white;
+    padding: 10px;
+    height: fit-content;
+    min-width: 350px;
+    width: fit-content;
+    top: 100%;
+    right: unset;
+    left: 0;
+    margin-left: unset;
+    margin-right: unset;
+  }
+  
+  .filtros-range #range{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px;
+  }
+  
+  .filtros legend{
+    padding: 2px 2px;
+    border-top: 1px solid #c6c5c5;
+    font-weight: bold;
+  }
+  
+  .filtros-checkbox{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+  }

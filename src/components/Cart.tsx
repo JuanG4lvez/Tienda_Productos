@@ -1,5 +1,6 @@
 import { CartItem, ProductID } from "../types/types"
 import { useNavigate } from 'react-router-dom'
+import '../css/Cart.css'
 
 type HeaderProps = {
     cart: CartItem[]
@@ -11,7 +12,7 @@ type HeaderProps = {
     cartTotal: number
 }
 
-export default function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal} : HeaderProps) {
+export default function Cart({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal} : HeaderProps) {
     const navigate = useNavigate();
 
     const handleNavigate = () =>

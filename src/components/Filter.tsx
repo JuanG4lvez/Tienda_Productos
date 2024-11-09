@@ -1,3 +1,5 @@
+import '../css/Filter.css'
+
 type filterProps = {
     filter: {
         minRange: number,

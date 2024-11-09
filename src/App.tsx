@@ -7,6 +7,10 @@ import Footer from './components/Footer'
 import Error from './components/Error'
 import { SignIn } from './pages/SignIn'
 import UserProfile from './pages/UserProfile'
+/*import Productos from './panel-admin/pages/Productos'
+import Pedidos from './panel-admin/pages/Pedidos'
+import Usuarios from './panel-admin/pages/Usuarios.ts'*/
+
 
 function App() {
  	return (
@@ -19,10 +23,10 @@ function App() {
 							<Route path='/checkout' element={<Checkout />} />
 							<Route path="/login" element={<SignIn />} />
           					<Route path="/userprofile" element={<UserProfile />} />
+							<Route path='*' element={<Error />}/>
 							{/*<Route path="/productos" element={<Productos />} />
         					<Route path="/pedidos" element={<Pedidos />} />
         					<Route path="/usuarios" element={<Usuarios />} />*/}
-							<Route path='*' element={<Error />}/>
 						</Routes>
 					</BrowserRouter>
 				</main>

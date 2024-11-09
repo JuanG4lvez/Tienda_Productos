@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../hooks/useCart';
 import { useState } from 'react';
-
+import '../css/Checkout.css'
 
 const Checkout = () => {
     const {cart, cartTotal} = useCart();
@@ -62,7 +62,7 @@ const Checkout = () => {
         })
         .then(data => {console.log(data)})
         .catch(error => {console.log(error)})
-        //navigate('/');
+        navigate('/');
     }
 
     return (
