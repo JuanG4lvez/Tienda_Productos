@@ -11,9 +11,8 @@ export const Error = () => {
     	<>
 			<div className="text-error">
 				<h3 className="text-black fs-4 fw-bold text-uppercase">Página no encontrada :c</h3>
-				<button className='button-sesion btn btn-sucess' onClick={handleNavigate}>Home</button>
+				<button className='button-sesion btn btn-sucess' onClick={handleNavigate}>Volver</button>
 			</div>
-			
     	</>
   	)
 }

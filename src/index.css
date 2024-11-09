@@ -1,4 +1,12 @@
 @charset "UTF-8";
+*{
+  box-sizing: border-box;
+}
+
+.button-login{
+  display: flex;
+  align-items: center;
+}
 
 html{
   height: 100%;
@@ -21,7 +29,8 @@ main{
   height: auto;
   position: fixed;
   justify-content: flex-end;
-  z-index: 200
+  z-index: 200;
+  min-height: 50px;
 }
 
 .nav-header button{
@@ -182,6 +191,7 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 @media (max-width: 586px){
@@ -239,6 +249,11 @@ footer{
   justify-self: center;
   margin-left: 5%;
   margin-right: 5%;
+  border: 1px solid #555555;
+}
+
+.address-content input:focus{
+  border: 1px solid #555555;
 }
 
 .address-content label{

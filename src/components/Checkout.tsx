@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../hooks/useCart';
 import { useState } from 'react';
-import Navbar from './Navbar';
+
 
 const Checkout = () => {
     const {cart, cartTotal} = useCart();
@@ -14,6 +14,13 @@ const Checkout = () => {
         navigate('/');
     }
 
+    const user = () => {
+		let item = sessionStorage.getItem('user');
+		return item ? JSON.parse(item) : null;
+	}
+
+	const userInfo = user();
+
     const cartToPedido = () => {
         const productoPedido = cart.map(item => ({
             productId: item.id,
@@ -21,7 +28,7 @@ const Checkout = () => {
         }));
         
         const pedido = {
-            userId: 1,
+            userId: userInfo.userId,
             products: productoPedido,
             totalAmount: cartTotal,
             deliveryAddress: address,
@@ -55,11 +62,14 @@ const Checkout = () => {
         })
         .then(data => {console.log(data)})
         .catch(error => {console.log(error)})
+        //navigate('/');
     }
 
     return (
         <>
-            <Navbar />
+            <nav className='nav-header bg-dark'>
+                <button className='button-sesion btn btn-sucess' onClick={handleNavigate}>Volver</button>
+            </nav>
             <div className='checkout'>
                 <div className='table-container'>
                 <table className='table'>
@@ -92,7 +102,6 @@ const Checkout = () => {
                     <input type="text" name="deliveryAddress" placeholder="Ingrese su direccion para delivery (opcional)" onChange={addressHandle}></input>
                 </div>
                 <div className='checkout-button my-4'>
-                    <button className="btn btn-dark w-30 my-3 p-2" onClick={handleNavigate}>Volver</button>
                     <button className="btn btn-dark w-30 my-3 p-2" onClick={createPedido}>Pagar carrito</button>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import Product from './Product.tsx'
 import Filter from './Filter.tsx'
 import { useCart } from '../hooks/useCart'
 import { useFilter } from '../hooks/useFilter.ts'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {
@@ -11,13 +12,31 @@ const Home = () => {
   	} = useCart();
 	const {filter, filterProducts, priceHandle, categoryHandle, handleSubmit, isFilter} = useFilter();
     const categories = [...new Set(data.map(product => product.category))]
+
+	const user = () => {
+		let item = sessionStorage.getItem('user');
+		return item ? JSON.parse(item) : null;
+	}
+
+	const userInfo = user();
+	console.log(userInfo)
     
-  return (
+  	return (
     <>
 		<nav className='nav-header bg-dark'>
-			<button className='button-sesion btn btn-sucess'>Inicio Sesion</button>
-            <button className='button-sesion btn btn-sucess'>Herramientas Admin</button>
-            
+			{userInfo !== null &&
+			userInfo.role == 'admin' &&
+			<button className='button-sesion btn btn-sucess'>Herramientas Admin</button>
+			}
+			{userInfo == null &&
+			<Link className="button-login" to="/login">
+            	<i className="fas fa-user fs-4 text-white"></i>
+          	</Link>}
+			{userInfo !== null &&
+			<Link className="button-login" to="/userprofile">
+            	<i className="fas fa-user fs-4 text-white"></i>
+          	</Link>}
+
 			<Header 
   				cart={cart}
   				removeFromCart={removeFromCart}
@@ -27,7 +46,6 @@ const Home = () => {
   				isEmpty={isEmpty}
   				cartTotal={cartTotal}
   			/>
-            
 		</nav>
         <header>
             <div className="container-xl">
