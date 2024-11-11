@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-<<<<<<< Updated upstream
 import "../css/Login.css";
-=======
-import "./Login.css";
->>>>>>> Stashed changes
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { useNavigate } from "react-router-dom";
 
@@ -46,14 +42,9 @@ const Login: React.FC = () => {
       const result = await response.json();
       console.log("login exitoso:", result);
       sessionStorage.setItem("user", JSON.stringify(result))
-<<<<<<< Updated upstream
       console.log('Objeto guardado en sessionStorage:', sessionStorage.getItem("user"));
       setLoading(false);
-      navigate("/");
-=======
-      setLoading(false);
       navigate("/userprofile");
->>>>>>> Stashed changes
     } catch (error) {
       setError("Error al iniciar sesión");
       setLoading(false);
