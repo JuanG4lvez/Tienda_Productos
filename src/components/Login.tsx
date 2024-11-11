@@ -41,7 +41,7 @@ const Login: React.FC = () => {
 
       const result = await response.json();
       console.log("login exitoso:", result);
-<<<<<<< HEAD
+
       sessionStorage.setItem("user", JSON.stringify(result))
       console.log('Objeto guardado en sessionStorage:', sessionStorage.getItem("user"));
       setLoading(false);
