@@ -1,7 +1,11 @@
 import { useNavigate } from 'react-router-dom'
 import { useCart } from '../hooks/useCart';
 import { useState } from 'react';
+<<<<<<< Updated upstream
 import '../css/Checkout.css'
+=======
+
+>>>>>>> Stashed changes
 
 const Checkout = () => {
     const {cart, cartTotal} = useCart();
@@ -62,7 +66,11 @@ const Checkout = () => {
         })
         .then(data => {console.log(data)})
         .catch(error => {console.log(error)})
+<<<<<<< Updated upstream
         navigate('/');
+=======
+        //navigate('/');
+>>>>>>> Stashed changes
     }
 
     return (

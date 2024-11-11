@@ -1,0 +1,41 @@
+.datos-perfil-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0077cc;
+    font-weight: 600;
+}
+
+.datos-perfil-container {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px;
+}
+
+.datos-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: auto;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.datos-perfil p {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.user-icon,
+.email-icon,
+.phone-icon,
+.map-icon {
+    margin-right: 8px;
+    color: #0077cc;
+    font-size: 20px;
+}

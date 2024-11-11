@@ -1,11 +1,19 @@
 import DatosPerfil from "./DatosPerfil";
 import HistorialPedidos from "./HistorialPedidos";
 import { useState } from "react";
+<<<<<<< Updated upstream
 import "../css/Perfil.css";
 
 const Perfil = () => {
   const [activeComponent, setActiveComponent] = useState("DatosPerfil");
   
+=======
+import "./Perfil.css";
+
+const Perfil = () => {
+  const [activeComponent, setActiveComponent] = useState("DatosPerfil");
+
+>>>>>>> Stashed changes
   return (
     
     <div className="perfil-container">
