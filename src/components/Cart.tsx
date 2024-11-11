@@ -1,5 +1,6 @@
 import { CartItem, ProductID } from "../types/types"
 import { useNavigate } from 'react-router-dom'
+import '../css/Cart.css'
 
 type HeaderProps = {
     cart: CartItem[]
@@ -11,7 +12,7 @@ type HeaderProps = {
     cartTotal: number
 }
 
-export default function Header({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal} : HeaderProps) {
+export default function Cart({cart, removeFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, cartTotal} : HeaderProps) {
     const navigate = useNavigate();
 
     const handleNavigate = () =>
@@ -19,7 +20,7 @@ export default function Header({cart, removeFromCart, increaseQuantity, decrease
         navigate('/checkout');
     }
     return(     
-        <nav className="mt-5 d-flex align-items-end">
+        <nav className="d-flex align-items-center">
             <div className="carrito">
                 <img className="img-fluid" src="/images/carrito.png" alt="imagen carrito" />
                 <div id="carrito" className="bg-white p-3">
@@ -57,7 +58,7 @@ export default function Header({cart, removeFromCart, increaseQuantity, decrease
                             </tbody>
                                 </table>    
                         <p className="text-end">Total pagar: <span className="fw-bold">${cartTotal}</span></p>
-                        <button className="btn btn-dark w-100 my-4 p-2" onClick={handleNavigate}>Pagar Carrito</button>
+                        <button className="btn btn-dark w-100  p-2" onClick={handleNavigate}>Pagar Carrito</button>
                     </>
                     )}
                     <button className="btn btn-dark w-100 my-4 p-2" onClick={clearCart}>Vaciar Carrito</button>

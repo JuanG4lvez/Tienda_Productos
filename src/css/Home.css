@@ -1,0 +1,26 @@
+.nav-header{
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    justify-content: flex-end;
+    z-index: 200;
+    min-height: 50px;
+  }
+  
+  .nav-header button{
+    position: relative;
+    margin: 5px 10px 5px;
+    
+  }
+  
+  .nav-header *{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 967px){
+    .container-inicio-sesion{
+      justify-content: center;
+    }
+  }

@@ -1,3 +1,5 @@
+import '../css/Filter.css'
+
 type filterProps = {
     filter: {
         minRange: number,
@@ -13,18 +15,18 @@ type filterProps = {
 export default function Filter({ priceHandle, categoryHandle, handleSubmit, categories} : filterProps) {
     
     const filters = [
-        {filter: 'price', description: 'Filtrar por precio'}, 
-        {filter: 'category', description: "Filtrar por categoría"}
+        {id: 1, filter: 'price', description: 'Filtrar por precio'}, 
+        {id: 2, filter: 'category', description: "Filtrar por categoría"}
     ]
     
     return(
-        <nav className="mt-5 d-flex align-items-end">
+        <nav className="my-4 d-flex align-items-end">
             <div className="filtros">
                 <img className="" src="/images/filtro.png" alt="imagen filtro"/>
                 <form onSubmit={handleSubmit}>
                     <div id="filtro">
                     {filters.map((option) => (
-                        <div key={option.filter}>
+                        <div key={option.id}>
                             {option.filter == "price" ? (
                             <>
                                 <legend className="text-center">Filtrar por precio</legend>
@@ -44,7 +46,7 @@ export default function Filter({ priceHandle, categoryHandle, handleSubmit, cate
                                 <legend className="text-center">Filtrar por categoría</legend>
                                 <div className="filtros-checkbox">
                                     {categories.map(category => (
-                                    <div>
+                                    <div key={categories.indexOf(category)}>
                                         <input type="checkbox" name="category" value={category} onChange={categoryHandle}></input>
                                         <label>{category}</label>
                                     </div>
