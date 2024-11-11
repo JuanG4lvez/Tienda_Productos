@@ -55,15 +55,11 @@ const Login: React.FC = () => {
 
       const result = await response.json();
       console.log("login exitoso:", result);
-<<<<<<< HEAD
-      setLoading(false);
-      navigate("/home");
-=======
+
       sessionStorage.setItem("user", JSON.stringify(result))
       console.log('Objeto guardado en sessionStorage:', sessionStorage.getItem("user"));
       setLoading(false);
-      navigate("/");
->>>>>>> Juan
+      navigate("/userprofile");
     } catch (error) {
       setError("Error al iniciar sesión");
       setLoading(false);
@@ -72,56 +68,6 @@ const Login: React.FC = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="container">
-      <div className="form-container sign-in-container">
-        <form onSubmit={handleSubmit}>
-          <h1 className="title">Iniciar Sesión</h1>
-
-          {/* iconos de redes sociales */}
-          <div className="social-container">
-            <a href="#" className="social">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" className="social">
-              <i className="fab fa-google-plus-g"></i>
-            </a>
-            <a href="#" className="social">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-          {/* fin iconos de redes sociales */}
-
-          <span>o ingresa con tu cuenta</span>
-
-          {/* input de email y contraseña */}
-          <div className="input-container">
-            <input
-              className="input-email"
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="input-password"
-              type="password"
-              placeholder="Contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          {/* fin input de email y contraseña */}
-
-          <a href="#">Olvidaste tu contraseña?</a>
-
-          {error && <div className="error-message">{error}</div>}
-
-          <button type="submit" className="sign-in-btn">
-            Ingresar
-          </button>
-        </form>
-=======
     <div className="login login-container">
       <div className="container">
         <div className="form-container sign-in-container">
@@ -162,7 +108,6 @@ const Login: React.FC = () => {
             </button>
           </form>
         </div>
->>>>>>> Juan
       </div>
     </div>
   );
