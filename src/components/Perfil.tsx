@@ -5,7 +5,7 @@ import "../css/Perfil.css";
 
 const Perfil = () => {
   const [activeComponent, setActiveComponent] = useState("DatosPerfil");
-
+  
   return (
     
     <div className="perfil-container">

@@ -8,6 +8,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,8 +42,9 @@ const Login: React.FC = () => {
       const result = await response.json();
       console.log("login exitoso:", result);
       sessionStorage.setItem("user", JSON.stringify(result))
+      console.log('Objeto guardado en sessionStorage:', sessionStorage.getItem("user"));
       setLoading(false);
-      navigate("/userprofile");
+      navigate("/");
     } catch (error) {
       setError("Error al iniciar sesión");
       setLoading(false);
